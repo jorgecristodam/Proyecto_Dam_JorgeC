@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gestionStock id="Stock-1" version="1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="esquema.xsd">
+
+    <metadatos>
+        <nombre>TechStock S.A. - Sede Central</nombre>
+        <direccion>
+            <calle>Calle Fuencarral</calle>
+            <numero>12</numero>
+            <ciudad>Madrid</ciudad>
+            <pais>ES</pais>
+            <cp>41833</cp>
+        </direccion>
+        <contacto>
+            <email>soporte@techstock.example</email>
+            <telefono prefijo="+34">974247671</telefono>
+        </contacto>
+    </metadatos>
+
+    <usuarios>
+        <usuario id="u1" rol="admin" activo="si">
+            <nombre>Juan_Administrador</nombre>
+            <email>admin@techstock.example</email>
+        </usuario>
+
+        <usuario id="u2" rol="comprador" activo="si">
+            <nombre>Daniel Coba</nombre>
+            <email>Daniel@correo.example</email>
+        </usuario>
+    </usuarios>
+
+    <catalogo>
+        <producto id="p1" categoria="perifericos" estado="disponible">
+            <nombre>Raton razer</nombre>
+            <descripcion>Ratón razer 3.0</descripcion>
+            <precio moneda="EUR">49.99</precio>
+            <cantidad>30</cantidad>
+            <tags>
+                <tag>gaming</tag>
+                <tag>usb</tag>
+            </tags>
+        </producto>
+
+        <producto id="p2" categoria="pantallas" estado="disponible">
+            <nombre>Monitor 24 Pulgadas AOC</nombre>
+            <descripcion>Monitor Full HD 240Hz.</descripcion>
+            <precio moneda="EUR">299.99</precio>
+            <cantidad>15</cantidad>
+            <tags>
+                <tag>oficina</tag>
+                <tag>hdmi</tag>
+            </tags>
+        </producto>
+
+        <producto id="p3" categoria="ordenadores" estado="agotado">
+            <nombre>Pc sobremesa 1</nombre>
+            <descripcion>Pc sobremesa básico con (i5, rtx1060ti, 16 gb ram).</descripcion>
+            <precio moneda="EUR">500</precio>
+            <cantidad>0</cantidad>
+            <tags>
+                <tag>oficina</tag>
+                <tag>pc</tag>
+            </tags>
+        </producto>
+
+        <producto id="p4" categoria="ordenadores" estado="disponible">
+            <nombre>Pc sobremesa 1</nombre>
+            <descripcion>Pc sobremesa gaming con (i7, rtx3060ti, 32 gb ram).</descripcion>
+            <precio moneda="EUR">1300</precio>
+            <cantidad>15</cantidad>
+            <tags>
+                <tag>gaming</tag>
+                <tag>pc</tag>
+            </tags>
+        </producto>
+
+        <producto id="p5" categoria="ordenadores" estado="disponible">
+            <nombre>Pc sobremesa 1</nombre>
+            <descripcion>Pc sobremesa gaming con (i9, rtx4070ti, 64 gb ram).</descripcion>
+            <precio moneda="EUR">2000</precio>
+            <cantidad>10</cantidad>
+            <tags>
+                <tag>gaming</tag>
+                <tag>pc</tag>
+            </tags>
+        </producto>
+
+        <producto id="p6" categoria="componentes" estado="disponible">
+            <nombre>Procesador i7 </nombre>
+            <descripcion>Procesador i7 de 12 generacion </descripcion>
+            <precio moneda="EUR">150</precio>
+            <cantidad>30</cantidad>
+            <tags>
+                <tag>gaming</tag>
+                <tag>componente</tag>
+            </tags>
+        </producto>
+
+        <producto id="p7" categoria="componentes" estado="disponible">
+            <nombre>Procesador i9 </nombre>
+            <descripcion>Procesador i9 de 12 generacion </descripcion>
+            <precio moneda="EUR">350</precio>
+            <cantidad>20</cantidad>
+            <tags>
+                <tag>gaming</tag>
+                <tag>componente</tag>
+            </tags>
+        </producto>
+
+        <pedidos>
+            <pedido id="ped-001" usuarioRef="u2" productoRef="p1" estado="entregado">
+                <fechaPedido>2026-04-15</fechaPedido>
+                <unidades>2</unidades>
+                <total>99.98</total>
+            </pedido>
+        </pedidos>
+
+
+    </catalogo>
+
+</gestionStock>

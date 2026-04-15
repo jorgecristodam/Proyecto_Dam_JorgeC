@@ -28,6 +28,11 @@
             <nombre>Daniel Coba</nombre>
             <email>Daniel@correo.example</email>
         </usuario>
+
+        <usuario id="u3" rol="comprador" activo="si">
+            <nombre>Joaquin Gomez</nombre>
+            <email>joaquin@correo.example</email>
+        </usuario>
     </usuarios>
 
     <catalogo>
@@ -107,6 +112,7 @@
                 <tag>componente</tag>
             </tags>
         </producto>
+    </catalogo>
 
         <pedidos>
             <pedido id="ped-001" usuarioRef="u2" productoRef="p1" estado="entregado">
@@ -114,9 +120,25 @@
                 <unidades>2</unidades>
                 <total>99.98</total>
             </pedido>
+
+
+
+            <pedido id="ped-002" usuarioRef="u2" productoRef="p2" estado="entregado">
+                <fechaPedido>2026-03-15</fechaPedido>
+                <unidades>2</unidades>
+                <total>599.98</total>
+            </pedido>
+
+
+
+            <pedido id="ped-003" usuarioRef="u3" productoRef="p4" estado="entregado">
+                <fechaPedido>2026-04-13</fechaPedido>
+                <unidades>1</unidades>
+                <total>1300</total>
+            </pedido>
         </pedidos>
 
 
-    </catalogo>
+
 
 </gestionStock>

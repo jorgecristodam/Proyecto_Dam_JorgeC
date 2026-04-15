@@ -135,7 +135,6 @@
     <xs:element name="gestionStock">
         <xs:complexType>
             <xs:sequence>
-
                 <xs:element name="metadatos">
                     <xs:complexType>
                         <xs:sequence>
@@ -158,21 +157,23 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="producto" type="ProductoType" maxOccurs="unbounded"/>
-                            <xs:element name="pedidos">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="pedido" type="PedidoType" minOccurs="0" maxOccurs="unbounded"/>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
 
+                <xs:element name="pedidos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="pedido" type="PedidoType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
+
             <xs:attribute name="id" type="xs:string" use="required"/>
             <xs:attribute name="version" type="xs:decimal" use="optional"/>
         </xs:complexType>
+
 
         <xs:key name="usuarioIdKey">
             <xs:selector xpath="usuarios/usuario"/>
@@ -185,12 +186,12 @@
         </xs:key>
 
         <xs:keyref name="pedidoUsuarioExiste" refer="usuarioIdKey">
-            <xs:selector xpath="catalogo/pedidos/pedido"/>
+            <xs:selector xpath="pedidos/pedido"/>
             <xs:field xpath="@usuarioRef"/>
         </xs:keyref>
 
         <xs:keyref name="pedidoProductoExiste" refer="productoIdKey">
-            <xs:selector xpath="catalogo/pedidos/pedido"/>
+            <xs:selector xpath="pedidos/pedido"/>
             <xs:field xpath="@productoRef"/>
         </xs:keyref>
 

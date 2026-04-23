@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified"
+           attributeFormDefault="unqualified">
+
+    <xs:simpleType name="PaisType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CpType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PrefijoTelefonoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\+\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="RolType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="admin"/>
+            <xs:enumeration value="comprador"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SiNoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="si"/>
+            <xs:enumeration value="no"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CategoriaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="perifericos"/>
+            <xs:enumeration value="pantallas"/>
+            <xs:enumeration value="ordenadores"/>
+            <xs:enumeration value="componentes"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="EstadoProductoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="disponible"/>
+            <xs:enumeration value="agotado"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MonedaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="DireccionType">
+        <xs:sequence>
+            <xs:element name="calle" type="xs:string"/>
+            <xs:element name="numero" type="xs:integer"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="pais" type="PaisType"/>
+            <xs:element name="cp" type="CpType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContactoType">
+        <xs:sequence>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telefono">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="prefijo" type="PrefijoTelefonoType" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UsuarioType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="rol" type="RolType" use="required"/>
+        <xs:attribute name="activo" type="SiNoType" default="si"/>
+    </xs:complexType>
+
+    <xs:complexType name="ProductoType">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="descripcion" type="xs:string"/>
+            <xs:element name="precio">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:decimal">
+                            <xs:attribute name="moneda" type="MonedaType" default="EUR"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="cantidad" type="xs:nonNegativeInteger"/>
+            <xs:element name="tags">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="tag" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="categoria" type="CategoriaType" use="required"/>
+        <xs:attribute name="estado" type="EstadoProductoType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PedidoType">
+        <xs:sequence>
+            <xs:element name="fechaPedido" type="xs:date"/>
+            <xs:element name="unidades" type="xs:integer"/>
+            <xs:element name="total" type="xs:decimal"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="usuarioRef" type="xs:IDREF" use="required"/>
+        <xs:attribute name="productoRef" type="xs:IDREF" use="required"/>
+        <xs:attribute name="estado" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:element name="gestionStock">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="metadatos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="direccion" type="DireccionType"/>
+                            <xs:element name="contacto" type="ContactoType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="usuarios">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="usuario" type="UsuarioType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="catalogo">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="producto" type="ProductoType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="pedidos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="pedido" type="PedidoType" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="version" type="xs:decimal" use="optional"/>
+        </xs:complexType>
+
+
+        <xs:key name="usuarioIdKey">
+            <xs:selector xpath="usuarios/usuario"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+
+        <xs:key name="productoIdKey">
+            <xs:selector xpath="catalogo/producto"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+
+        <xs:keyref name="pedidoUsuarioExiste" refer="usuarioIdKey">
+            <xs:selector xpath="pedidos/pedido"/>
+            <xs:field xpath="@usuarioRef"/>
+        </xs:keyref>
+
+        <xs:keyref name="pedidoProductoExiste" refer="productoIdKey">
+            <xs:selector xpath="pedidos/pedido"/>
+            <xs:field xpath="@productoRef"/>
+        </xs:keyref>
+
+    </xs:element>
+
+</xs:schema>

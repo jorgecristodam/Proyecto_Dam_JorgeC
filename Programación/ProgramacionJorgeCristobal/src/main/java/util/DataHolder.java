@@ -1,4 +1,4 @@
-package org.example.programacionjorgecristobal.util;
+package util;
 
 import org.example.programacionjorgecristobal.Model.Usuario;
 import org.example.programacionjorgecristobal.Model.Producto;

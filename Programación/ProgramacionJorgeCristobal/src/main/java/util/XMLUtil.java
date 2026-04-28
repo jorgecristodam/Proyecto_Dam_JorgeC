@@ -1,13 +1,15 @@
-package org.example.programacionjorgecristobal.util;
+package util;
 
 import org.example.programacionjorgecristobal.Model.Usuario;
 import org.example.programacionjorgecristobal.Model.Producto;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 public class XMLUtil {
 
     private static final String RUTA_XML = "src/main/resources/datos.xml";
@@ -66,4 +68,53 @@ public class XMLUtil {
             }
             return lista;
         }
+    public static void guardarTodo(List<Usuario> usuarios, List<Producto> productos) {
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            Document doc = dbf.newDocumentBuilder().newDocument();
+
+
+            Element raiz = doc.createElement("gestionStock");
+            doc.appendChild(raiz);
+
+
+            Element wrapU = doc.createElement("usuarios");
+            raiz.appendChild(wrapU);
+            for (Usuario u : usuarios) {
+                Element elU = doc.createElement("usuario");
+                elU.setAttribute("id", u.getId());
+                elU.setAttribute("rol", u.getRol());
+                elU.setAttribute("activo", u.getActivo());
+
+                Element n = doc.createElement("nombre"); n.setTextContent(u.getNombre());
+                Element e = doc.createElement("email"); e.setTextContent(u.getEmail());
+                elU.appendChild(n); elU.appendChild(e);
+                wrapU.appendChild(elU);
+            }
+
+            Element wrapP = doc.createElement("catalogo");
+            raiz.appendChild(wrapP);
+            for (Producto p : productos) {
+                Element elP = doc.createElement("producto");
+                elP.setAttribute("id", p.getId());
+                elP.setAttribute("categoria", p.getCategoria());
+                elP.setAttribute("estado", p.getEstado());
+
+                Element n = doc.createElement("nombre"); n.setTextContent(p.getNombre());
+                Element d = doc.createElement("descripcion"); d.setTextContent(p.getDescripcion());
+                Element pr = doc.createElement("precio"); pr.setTextContent(String.valueOf(p.getPrecio()));
+                Element c = doc.createElement("cantidad"); c.setTextContent(String.valueOf(p.getCantidad()));
+
+                elP.appendChild(n); elP.appendChild(d); elP.appendChild(pr); elP.appendChild(c);
+                wrapP.appendChild(elP);
+            }
+
+            Transformer tf = TransformerFactory.newInstance().newTransformer();
+            tf.setOutputProperty(OutputKeys.INDENT, "yes");
+            tf.transform(new DOMSource(doc), new StreamResult(new File(RUTA_XML)));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+}

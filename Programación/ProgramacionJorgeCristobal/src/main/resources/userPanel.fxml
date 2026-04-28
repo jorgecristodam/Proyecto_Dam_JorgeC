@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.programacionjorgecristobal.controller.UserController"
+      style="-fx-padding: 20;">
+
+    <Label fx:id="lblBienvenida" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    <TableView fx:id="tablaProductos" VBox.vgrow="ALWAYS">
+    </TableView>
+    <Button text="Comprar Producto Seleccionado" onAction="#comprarProducto"/>
+</VBox>

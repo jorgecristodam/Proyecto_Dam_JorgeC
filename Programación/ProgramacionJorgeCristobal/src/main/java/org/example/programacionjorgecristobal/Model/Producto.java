@@ -1,11 +1,18 @@
 package org.example.programacionjorgecristobal.Model;
-import lombok.*;
-import javax.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
+
+@XmlRootElement(name = "producto")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Producto {
     @XmlAttribute(name = "id")

@@ -31,7 +31,13 @@ public class XMLUtil {
                 String activo = el.getAttribute("activo");
                 String nombre = el.getElementsByTagName("nombre").item(0).getTextContent();
                 String email = el.getElementsByTagName("email").item(0).getTextContent();
-                lista.add(new Usuario(id, rol, activo, nombre, email));
+                Usuario u = new Usuario();
+                u.setId(id);
+                u.setRol(rol);
+                u.setActivo(activo);
+                u.setNombre(nombre);
+                u.setEmail(email);
+                lista.add(u);
 
 
             }

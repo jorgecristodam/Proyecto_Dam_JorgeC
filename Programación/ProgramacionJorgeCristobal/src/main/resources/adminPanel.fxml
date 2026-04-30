@@ -21,7 +21,9 @@
             <TextField fx:id="txtStock" promptText="Stock Inicial"/>
 
             <TextField fx:id="txtCategoria" promptText="Categoría"/>
-
+            <Button text="Anadir Producto" onAction="#anadirProducto" maxWidth="Infinity" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+            <Button text="Eliminar Seleccionado" onAction="#eliminarProducto"
+                    maxWidth="Infinity" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
 
         </VBox>
     </right>

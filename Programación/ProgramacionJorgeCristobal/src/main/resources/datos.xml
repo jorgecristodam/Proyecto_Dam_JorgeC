@@ -15,53 +15,59 @@
         </usuario>
     </usuarios>
     <catalogo>
-        <producto categoria="perifericos" estado="disponible" id="p1">
-            <nombre>raton</nombre>
-            <descripcion>Raton razer</descripcion>
+        <producto categoria="raton" estado="disponible" id="p1">
+            <nombre>Raton razer</nombre>
+            <descripcion>perifericos</descripcion>
             <precio>49.99</precio>
-            <cantidad>28</cantidad>
+            <cantidad>27</cantidad>
         </producto>
-        <producto categoria="pantallas" estado="disponible" id="p2">
-            <nombre>monitor</nombre>
-            <descripcion>Monitor 24 Pulgadas AOC</descripcion>
+        <producto categoria="monitor" estado="disponible" id="p2">
+            <nombre>Monitor 24 Pulgadas AOC</nombre>
+            <descripcion>pantallas</descripcion>
             <precio>299.99</precio>
             <cantidad>15</cantidad>
         </producto>
-        <producto categoria="ordenadores" estado="agotado" id="p3">
-            <nombre>Portatil mac</nombre>
-            <descripcion>Pc sobremesa 1</descripcion>
+        <producto categoria="Portatil mac" estado="agotado" id="p3">
+            <nombre>Pc sobremesa 1</nombre>
+            <descripcion>ordenadores</descripcion>
             <precio>500.0</precio>
             <cantidad>0</cantidad>
         </producto>
-        <producto categoria="ordenadores" estado="disponible" id="p4">
-            <nombre>Portatil</nombre>
-            <descripcion>Pc sobremesa 1</descripcion>
+        <producto categoria="Portatil" estado="disponible" id="p4">
+            <nombre>Pc sobremesa 1</nombre>
+            <descripcion>ordenadores</descripcion>
             <precio>1300.0</precio>
             <cantidad>15</cantidad>
         </producto>
-        <producto categoria="componentes" estado="disponible" id="p6">
-            <nombre>Procesador i7 de 12 generacion</nombre>
-            <descripcion>Procesador i7 </descripcion>
+        <producto categoria="Procesador i7 de 12 generacion" estado="disponible" id="p6">
+            <nombre>Procesador i7 </nombre>
+            <descripcion>componentes</descripcion>
             <precio>150.0</precio>
             <cantidad>30</cantidad>
         </producto>
-        <producto categoria="componentes" estado="disponible" id="p7">
-            <nombre>Procesador i9 de 12 generacion </nombre>
-            <descripcion>Procesador i9 </descripcion>
+        <producto categoria="Procesador i9 de 12 generacion " estado="disponible" id="p7">
+            <nombre>Procesador i9 </nombre>
+            <descripcion>componentes</descripcion>
             <precio>350.0</precio>
             <cantidad>20</cantidad>
         </producto>
-        <producto categoria="movile xiaomi" estado="" id="p9">
-            <nombre>movil xiaomi de 2023 125gb de memoria</nombre>
-            <descripcion>moviles</descripcion>
+        <producto categoria="movil xiaomi de 2023 125gb de memoria" estado="" id="p9">
+            <nombre>moviles</nombre>
+            <descripcion>movile xiaomi</descripcion>
             <precio>130.0</precio>
             <cantidad>20</cantidad>
         </producto>
-        <producto categoria="alfombrilla" estado="" id="p8">
-            <nombre>alfombrilla 30cm X 40cm negra</nombre>
-            <descripcion>perfericos</descripcion>
+        <producto categoria="alfombrilla 30cm X 40cm negra" estado="" id="p8">
+            <nombre>perfericos</nombre>
+            <descripcion>alfombrilla</descripcion>
             <precio>30.0</precio>
             <cantidad>10</cantidad>
+        </producto>
+        <producto categoria="Sin descripción" estado="Activo" id="p10">
+            <nombre>perifericos</nombre>
+            <descripcion>cascos</descripcion>
+            <precio>20.0</precio>
+            <cantidad>100</cantidad>
         </producto>
     </catalogo>
 </gestionStock>

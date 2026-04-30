@@ -11,4 +11,5 @@
     <PasswordField fx:id="txtPass" promptText="Contraseña" maxWidth="200"/>
 
     <Label fx:id="lblError" textFill="RED"/>
+    <Button text="Entrar" onAction="#hacerLogin"/>
 </VBox>

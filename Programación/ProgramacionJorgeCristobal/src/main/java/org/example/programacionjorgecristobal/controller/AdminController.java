@@ -29,7 +29,7 @@ public class AdminController {
         TableColumn<Producto, Integer> colStock = new TableColumn<>("Stock");
         colStock.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
 
-        tablaAdmin.getColumns().setAll(colId, colNom, colPre);;
+        tablaAdmin.getColumns().setAll(colId,colNom, colPre, colStock);;
 
         refrescarTabla();
     }

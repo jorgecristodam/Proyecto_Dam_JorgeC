@@ -15,59 +15,71 @@
         </usuario>
     </usuarios>
     <catalogo>
-        <producto categoria="raton" estado="disponible" id="p1">
+        <producto categoria="perifericos" estado="Activo" id="p1">
             <nombre>Raton razer</nombre>
-            <descripcion>perifericos</descripcion>
+            <descripcion>disponible</descripcion>
             <precio>49.99</precio>
             <cantidad>27</cantidad>
         </producto>
-        <producto categoria="monitor" estado="disponible" id="p2">
+        <producto categoria="pantallas" estado="Activo" id="p2">
             <nombre>Monitor 24 Pulgadas AOC</nombre>
-            <descripcion>pantallas</descripcion>
+            <descripcion>disponible</descripcion>
             <precio>299.99</precio>
             <cantidad>15</cantidad>
         </producto>
-        <producto categoria="Portatil mac" estado="agotado" id="p3">
+        <producto categoria="ordenadores" estado="Agotado" id="p3">
             <nombre>Pc sobremesa 1</nombre>
-            <descripcion>ordenadores</descripcion>
+            <descripcion>Pc gamer</descripcion>
             <precio>500.0</precio>
             <cantidad>0</cantidad>
         </producto>
-        <producto categoria="Portatil" estado="disponible" id="p4">
+        <producto categoria="ordenadores" estado="Activo" id="p4">
             <nombre>Pc sobremesa 1</nombre>
-            <descripcion>ordenadores</descripcion>
+            <descripcion>Pc oficina</descripcion>
             <precio>1300.0</precio>
             <cantidad>15</cantidad>
         </producto>
-        <producto categoria="Procesador i7 de 12 generacion" estado="disponible" id="p6">
+        <producto categoria="componentes" estado="Activo" id="p6">
             <nombre>Procesador i7 </nombre>
-            <descripcion>componentes</descripcion>
+            <descripcion>Procesador i7 de 12 generacion</descripcion>
             <precio>150.0</precio>
             <cantidad>30</cantidad>
         </producto>
-        <producto categoria="Procesador i9 de 12 generacion " estado="disponible" id="p7">
+        <producto categoria="componentes" estado="Activo" id="p7">
             <nombre>Procesador i9 </nombre>
-            <descripcion>componentes</descripcion>
+            <descripcion>Procesador i9 de 12 generacion </descripcion>
             <precio>350.0</precio>
             <cantidad>20</cantidad>
         </producto>
-        <producto categoria="movil xiaomi de 2023 125gb de memoria" estado="" id="p9">
+        <producto categoria="movile xiaomi" estado="Activo" id="p9">
             <nombre>moviles</nombre>
-            <descripcion>movile xiaomi</descripcion>
+            <descripcion>movil xiaomi de 2023 125gb de memoria</descripcion>
             <precio>130.0</precio>
             <cantidad>20</cantidad>
         </producto>
-        <producto categoria="alfombrilla 30cm X 40cm negra" estado="" id="p8">
-            <nombre>perfericos</nombre>
-            <descripcion>alfombrilla</descripcion>
+        <producto categoria="perfericos" estado="Activo" id="p8">
+            <nombre>alfombrilla</nombre>
+            <descripcion>alfombrilla 30cm X 40cm negra</descripcion>
             <precio>30.0</precio>
             <cantidad>10</cantidad>
         </producto>
-        <producto categoria="Sin descripción" estado="Activo" id="p10">
-            <nombre>perifericos</nombre>
-            <descripcion>cascos</descripcion>
+        <producto categoria="perifericos" estado="Activo" id="p10">
+            <nombre>Cascos</nombre>
+            <descripcion>Sonido 4k, cascos razer</descripcion>
             <precio>20.0</precio>
             <cantidad>100</cantidad>
+        </producto>
+        <producto categoria="componetes" estado="Agotado" id="p11">
+            <nombre>Procesador i3</nombre>
+            <descripcion>Sin descripción</descripcion>
+            <precio>30.0</precio>
+            <cantidad>0</cantidad>
+        </producto>
+        <producto categoria="Televisiones" estado="Activo" id="p12">
+            <nombre>Smartv</nombre>
+            <descripcion>Tv de ultima generacion 50 pulgadas</descripcion>
+            <precio>250.0</precio>
+            <cantidad>8</cantidad>
         </producto>
     </catalogo>
 </gestionStock>

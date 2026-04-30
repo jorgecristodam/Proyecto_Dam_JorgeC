@@ -67,7 +67,15 @@ public class XMLUtil {
                     double pre = Double.parseDouble(el.getElementsByTagName("precio").item(0).getTextContent());
                     int cant = Integer.parseInt(el.getElementsByTagName("cantidad").item(0).getTextContent());
 
-                    lista.add(new Producto(id, cat, est, nom, des, pre, cant));
+                   Producto p = new Producto();
+                   p.setId(id);
+                    p.setNombre(nom);
+                    p.setCategoria(cat);
+                    p.setEstado(est);
+                    p.setDescripcion(des);
+                    p.setPrecio(pre);
+                    p.setCantidad(cant);
+                    lista.add(p);
                 }
             } catch (Exception e) {
                 System.err.println("Error al cargar productos: " + e.getMessage());

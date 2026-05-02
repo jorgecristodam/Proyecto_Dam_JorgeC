@@ -9,3 +9,5 @@ Las ventanas que hay son las de login, y luego la de administrador si entras con
 un usuario que está vinculado a un rol usuario.
 
 Cabe decir que como no he podido hacer el proytecto de bases de datos he decidio hacerlo con el .xml que tuvimos que hacer en lenguaje de marcas.
+
+El proyecto ha sido realizado con version de JDK 21 y JavaFX21 para que se tenga encuenta a la hora de abrir el archivo

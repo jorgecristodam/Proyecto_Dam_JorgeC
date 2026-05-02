@@ -38,7 +38,7 @@ public class LoginController {
             if (usuarioEncontrado.getRol().equalsIgnoreCase("admin")) {
                 cambiarPantalla("/Paneladmin.fxml");
             } else {
-                cambiarPantalla("/UserPanel.fxml");
+                cambiarPantalla("/Panelusuario.fxml");
             }
         } else {
             System.out.println("Usuario no encontrado");

@@ -19,13 +19,13 @@
             <nombre>Raton razer</nombre>
             <descripcion>disponible</descripcion>
             <precio>49.99</precio>
-            <cantidad>27</cantidad>
+            <cantidad>24</cantidad>
         </producto>
         <producto categoria="pantallas" estado="Activo" id="p2">
             <nombre>Monitor 24 Pulgadas AOC</nombre>
             <descripcion>disponible</descripcion>
             <precio>299.99</precio>
-            <cantidad>15</cantidad>
+            <cantidad>13</cantidad>
         </producto>
         <producto categoria="ordenadores" estado="Agotado" id="p3">
             <nombre>Pc sobremesa 1</nombre>
@@ -86,6 +86,18 @@
             <descripcion>Cargador magnetico iphone (11,12,13,14,15,16)</descripcion>
             <precio>30.0</precio>
             <cantidad>12</cantidad>
+        </producto>
+        <producto categoria="Televisiones" estado="Activo" id="p14">
+            <nombre>television android</nombre>
+            <descripcion>Television pequeña android</descripcion>
+            <precio>200.0</precio>
+            <cantidad>25</cantidad>
+        </producto>
+        <producto categoria="Consolas" estado="Activo" id="p15">
+            <nombre>play5</nombre>
+            <descripcion>Play 5 500gb</descripcion>
+            <precio>500.0</precio>
+            <cantidad>100</cantidad>
         </producto>
     </catalogo>
 </gestionStock>

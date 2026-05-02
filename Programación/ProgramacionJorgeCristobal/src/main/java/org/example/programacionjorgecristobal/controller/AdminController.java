@@ -6,14 +6,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.programacionjorgecristobal.Model.Producto;
-import util.DataHolder;
+import util.Gestor;
 import util.XMLUtil;
 
 
 
 public class AdminController {
     @FXML private TableView<Producto> tablaAdmin;
-    @FXML private TextField txtId, txtNombre, txtPrecio, txtStock, txtCategoria;
+    @FXML private TextField txtId, txtNombre, txtPrecio, txtStock, txtCategoria, txtDescripcion;
 
     @FXML
     public void initialize() {
@@ -35,8 +35,8 @@ public class AdminController {
     }
 
     private void refrescarTabla() {
-        if (DataHolder.productos != null) {
-            tablaAdmin.setItems(FXCollections.observableArrayList(DataHolder.productos));
+        if (Gestor.productos != null) {
+            tablaAdmin.setItems(FXCollections.observableArrayList(Gestor.productos));
         }
     }
 
@@ -51,9 +51,9 @@ public class AdminController {
             p.setCategoria(txtCategoria.getText());
 
             p.setEstado("Activo");
-            p.setDescripcion("Sin descripción");
-            DataHolder.productos.add(p);
-            XMLUtil.guardarTodo(DataHolder.usuarios, DataHolder.productos);
+            p.setDescripcion(txtDescripcion.getText());
+            Gestor.productos.add(p);
+            XMLUtil.guardarTodo(Gestor.usuarios, Gestor.productos);
 
             refrescarTabla();
             limpiarCampos();
@@ -68,9 +68,9 @@ public class AdminController {
         Producto seleccionado = tablaAdmin.getSelectionModel().getSelectedItem();
 
         if (seleccionado != null) {
-            DataHolder.productos.remove(seleccionado);
+            Gestor.productos.remove(seleccionado);
 
-            XMLUtil.guardarTodo(DataHolder.usuarios, DataHolder.productos);
+            XMLUtil.guardarTodo(Gestor.usuarios, Gestor.productos);
 
             refrescarTabla();
 
@@ -86,6 +86,7 @@ public class AdminController {
         txtPrecio.clear();
         txtStock.clear();
         txtCategoria.clear();
+        txtDescripcion.clear();
     }
 
 }

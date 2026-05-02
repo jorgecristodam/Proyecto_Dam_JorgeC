@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import util.DataHolder;
+import util.Gestor;
 import util.XMLUtil;
 
 
@@ -30,8 +30,8 @@ public class Main extends Application {
         System.out.println("Iniciando carga de datos...");
 
 
-        DataHolder.usuarios = XMLUtil.leerUsuarios();
-        DataHolder.productos = XMLUtil.leerProductos();
+        Gestor.usuarios = XMLUtil.leerUsuarios();
+        Gestor.productos = XMLUtil.leerProductos();
 
 
         System.out.println("Datos listos. Cargando interfaz...");

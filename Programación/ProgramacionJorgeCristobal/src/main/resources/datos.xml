@@ -81,5 +81,11 @@
             <precio>250.0</precio>
             <cantidad>8</cantidad>
         </producto>
+        <producto categoria="Complementos" estado="Activo" id="p13">
+            <nombre>Cargador iphone</nombre>
+            <descripcion>Cargador magnetico iphone (11,12,13,14,15,16)</descripcion>
+            <precio>30.0</precio>
+            <cantidad>12</cantidad>
+        </producto>
     </catalogo>
 </gestionStock>

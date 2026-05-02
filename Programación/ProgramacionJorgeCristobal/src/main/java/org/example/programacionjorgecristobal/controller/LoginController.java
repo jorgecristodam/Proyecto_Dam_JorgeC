@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.programacionjorgecristobal.Model.Usuario;
-import util.DataHolder;
+import util.Gestor;
 
 import java.io.IOException;
 
@@ -25,18 +25,18 @@ public class LoginController {
 
 
         Usuario usuarioEncontrado = null;
-        for (Usuario u : DataHolder.usuarios) {
+        for (Usuario u : Gestor.usuarios) {
             if (u.getNombre().equals(userIntroducido) && u.getId().equals(passIntroducida)) {
                 usuarioEncontrado = u;
                 break;
             }
         }
         if (usuarioEncontrado != null) {
-            DataHolder.usuarioLogueado = usuarioEncontrado;
+            Gestor.usuarioLogueado = usuarioEncontrado;
 
 
             if (usuarioEncontrado.getRol().equalsIgnoreCase("admin")) {
-                cambiarPantalla("/adminPanel.fxml");
+                cambiarPantalla("/Paneladmin.fxml");
             } else {
                 cambiarPantalla("/UserPanel.fxml");
             }

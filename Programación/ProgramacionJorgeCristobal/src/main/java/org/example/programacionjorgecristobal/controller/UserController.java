@@ -6,7 +6,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.example.programacionjorgecristobal.Model.Producto;
-import util.DataHolder;
+import util.Gestor;
 import util.XMLUtil;
 
 public class UserController {
@@ -22,7 +22,7 @@ public class UserController {
 
         tablaProductos.getColumns().addAll(colNom, colStock);
 
-        tablaProductos.setItems(FXCollections.observableArrayList(DataHolder.productos));
+        tablaProductos.setItems(FXCollections.observableArrayList(Gestor.productos));
     }
 
     @FXML
@@ -33,7 +33,7 @@ public class UserController {
             seleccionado.setCantidad(seleccionado.getCantidad() - 1);
 
             tablaProductos.refresh();
-            XMLUtil.guardarTodo(DataHolder.usuarios, DataHolder.productos);
+            XMLUtil.guardarTodo(Gestor.usuarios, Gestor.productos);
         }
     }
 }

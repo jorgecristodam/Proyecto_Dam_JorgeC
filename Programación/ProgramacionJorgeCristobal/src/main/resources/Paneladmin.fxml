@@ -19,7 +19,7 @@
             <TextField fx:id="txtNombre" promptText="Nombre"/>
             <TextField fx:id="txtPrecio" promptText="Precio"/>
             <TextField fx:id="txtStock" promptText="Stock Inicial"/>
-
+            <TextField fx:id="txtDescripcion" promptText="Descripción"/>
             <TextField fx:id="txtCategoria" promptText="Categoría"/>
             <Button text="Anadir Producto" onAction="#anadirProducto" maxWidth="Infinity" style="-fx-background-color: #2ecc71; -fx-text-fill: white;"/>
             <Button text="Eliminar Seleccionado" onAction="#eliminarProducto"
